@@ -1,4 +1,4 @@
-# How will we do it
+## How will we do it
 
 My 1st plan is to create a neural network that learns through different patterns of text what user tries to mean through those texts. We are using neural net because the questions are **NOT hard-coded**. The users are free to type in the question in whichever form they wish to, as long it means the same. For example user1 says "What is my CGPA this sem ?" , chatbot understands user1 is asking for the result from the bot. User2 says "tell me my result", chatbot understands the user2 wants the result.
 

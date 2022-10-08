@@ -1,7 +1,3 @@
----
-id: '121212'
----
-
 # College Enquiry Chatbot
 
 ## What does this College Enquiry Chatbot do ?
