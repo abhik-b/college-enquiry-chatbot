@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teachers</title>
+  </head>
+  <body>
+    All Teachers :
+    <ul>
+      {% for teacher in teachers %}
+      <li>
+        <p>{{teacher}} Department : {{teacher.department}}</p>
+      <button>
+        <a href="http://127.0.0.1:5000/teachers/delete/{{teacher.id}}/">delete</a>
+      </button>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <h2>Add teachers  here</h2>
+    <form action="http://127.0.0.1:5000/teachers/" method="post">
+      <label for="firstname">First name</label>
+      <br>
+      <input type="text" name="firstname"
+             placeholder="First name"
+             value="{{ request.form['firstname'] }}">
+      </input>
+      <br>
+      <label for="lastname">Last name</label>
+      <br>
+      <input type="text" name="lastname"
+             placeholder="last name"
+             value="{{ request.form['lastname'] }}">
+      </input>
+      <br>
+
+      <label for="department">Department</label>
+      <br>
+      <input type="text" name="department"
+             placeholder="department"
+             value="{{ request.form['department'] }}">
+      </input>
+      <br>
+      <button type="submit">Submit</button>
+  </form>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hello, thanks for visiting",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks",
+        "Thank you",
+        "That's helpful",
+        "Thank's a lot!",
+        "Okay"
+      ],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "holidays",
+      "patterns": [
+        "When are holidays ? ",
+        "What kinds of holidays are there?",
+        "What holidays do we have?",
+        "tell more about holidays",
+        "holidays when ???",
+        "which days are holidays ?"
+      ],
+      "responses": [
+        "We have 100 holidays throughout the year",
+        "100 Holidays thorughout the year !!!"
+      ]
+    },
+    {
+      "tag": "faculty",
+      "patterns": [
+        "Do you know the teachers ?",
+        "Who are the teachers ?",
+        "Can you tell more about teachers?",
+        "Tell me about teachers  ",
+        "more info on teachers",
+        "what are the teachers ?",
+        "tell more about the teachers",
+        "narula teachers"
+      ],
+      "responses": [
+        "Our Prinicipal is Dr. Maitreyi Ray Kanjilal \n Our Placement Cell has Biswarup Bhattacharjee , Abhijit Nandy , Debanjan Mitra. "
+      ]
+    },
+    {
+      "tag": "courses",
+      "patterns": [
+        "Which Courses are offered here",
+        "tell me more about BCA",
+        "More info on BTECH please",
+        "What is MTECH ?",
+        "What is BCA ?",
+        "When do BTECH gets completed ?",
+        "How long does MCA take ?"
+      ],
+      "responses": ["Course related queries", "MCA takes 2years"]
+    },
+    {
+      "tag": "funny",
+      "patterns": [
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Do you know a joke?"
+      ],
+      "responses": [
+        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+        "What did the buffalo say when his son left for college? Bison."
+      ]
+    },
+    {
+      "tag": "result",
+      "patterns": [
+        "WHAT is my SGPA this sem ?",
+        "What is my CGPA this sem",
+        "Do you know my result?",
+        "Do you know my CGPA?",
+        "Do you know my curent cgpa?",
+        "tell me my cgpa?",
+        "tell me my curent sgpa?",
+        "tell me my result",
+        "what is my result"
+      ],
+      "responses": ["tell me your student id , example : \n434121010021"]
+    }
+  ]
+}
