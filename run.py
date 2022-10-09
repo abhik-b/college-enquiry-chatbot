@@ -2,9 +2,9 @@ from flask import render_template,request,jsonify,redirect,url_for
 import requests
 from flask_server import app,db
 import flask_server.university  
-from flask_server.university.models import Holidays
-from chat import chatbot_response
-from nlp_utils import course_matcher
+# from flask_server.university.models import Holidays
+# from chat import chatbot_response
+# from nlp_utils import course_matcher
 
 
 db.create_all()

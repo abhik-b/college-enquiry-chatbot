@@ -12,7 +12,7 @@ So we will do the following :
 4. implementing chat
 5. flask rest api server
 6. html css chat frontend for chat
-7. database models to store info on teachers,sdtudents & courses
+7. database models to store info on teachers,students & courses
 8. html css admin dashboard
 
 To do the above , we need :

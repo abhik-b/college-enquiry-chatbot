@@ -1,0 +1,7 @@
+.vscode
+__pycache__
+venv
+*.pth
+*.db
+script.md
+*.todo

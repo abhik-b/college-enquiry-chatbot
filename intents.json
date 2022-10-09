@@ -12,7 +12,7 @@
       ],
       "responses": [
         "Hey :-)",
-        "Hello, thanks for visiting",
+        "Hello, thanks for messaging",
         "Hi there, what can I do for you?",
         "Hi there, how can I help?"
       ]
@@ -30,22 +30,14 @@
       "tag": "thanks",
       "patterns": [
         "Thanks",
-        "Thank you",
-        "That's helpful",
-        "Thank's a lot!",
         "Okay"
       ],
-      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+      "responses": ["Happy to help!"]
     },
     {
       "tag": "holidays",
       "patterns": [
-        "When are holidays ? ",
-        "What kinds of holidays are there?",
-        "What holidays do we have?",
-        "tell more about holidays",
-        "holidays when ???",
-        "which days are holidays ?"
+        "When are holidays ? "
       ],
       "responses": [
         "We have 100 holidays throughout the year",
@@ -55,14 +47,7 @@
     {
       "tag": "faculty",
       "patterns": [
-        "Do you know the teachers ?",
-        "Who are the teachers ?",
-        "Can you tell more about teachers?",
-        "Tell me about teachers  ",
-        "more info on teachers",
-        "what are the teachers ?",
-        "tell more about the teachers",
-        "narula teachers"
+        "Do you know the teachers ?"
       ],
       "responses": [
         "Our Prinicipal is Dr. Maitreyi Ray Kanjilal \n Our Placement Cell has Biswarup Bhattacharjee , Abhijit Nandy , Debanjan Mitra. "
@@ -70,16 +55,8 @@
     },
     {
       "tag": "courses",
-      "patterns": [
-        "Which Courses are offered here",
-        "tell me more about BCA",
-        "More info on BTECH please",
-        "What is MTECH ?",
-        "What is BCA ?",
-        "When do BTECH gets completed ?",
-        "How long does MCA take ?"
-      ],
-      "responses": ["Course related queries", "MCA takes 2years"]
+      "patterns": ["Which Courses are offered here"],
+      "responses": ["Course related queries"]
     },
     {
       "tag": "funny",
@@ -96,14 +73,6 @@
     {
       "tag": "result",
       "patterns": [
-        "WHAT is my SGPA this sem ?",
-        "What is my CGPA this sem",
-        "Do you know my result?",
-        "Do you know my CGPA?",
-        "Do you know my curent cgpa?",
-        "tell me my cgpa?",
-        "tell me my curent sgpa?",
-        "tell me my result",
         "what is my result"
       ],
       "responses": ["tell me your student id , example : \n434121010021"]
