@@ -3,5 +3,5 @@ from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///univerity.db'
+app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///university.db'
 db = SQLAlchemy(app)

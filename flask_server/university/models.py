@@ -6,7 +6,7 @@ class Teacher(db.Model):
     last_name=db.Column(db.String(length=123),nullable=False)
     department = db.Column(db.String(length=123),nullable=False)
     def __repr__(self):
-        return f"Faculty ID : {self.id} \n Name : {self.first_name} {self.last_name}"
+        return f"{self.first_name} {self.last_name}"
 
 
 
@@ -23,6 +23,19 @@ class Student(db.Model):
     id = db.Column('student_id',db.Integer(),primary_key=True)
     name=db.Column(db.String(length=123),nullable=False)
     cgpa=db.Column(db.String(length=4))
+    course_id = db.Column(db.Integer, db.ForeignKey('course.course_id'))
+    course = db.relationship('Course', backref='course', lazy=True)
 
     def __repr__(self):
-        return f"{name} - course - {cgpa}"
+        return f"{self.name} - {self.course} - {self.cgpa}"
+
+class Course(db.Model):
+    id = db.Column('course_id',db.Integer(),primary_key=True)
+    name=db.Column(db.String(length=123),nullable=False)
+    syllabus=db.Column(db.LargeBinary())
+    duration=db.Column(db.String(length=123),nullable=False)
+
+    def __repr__(self):
+        return f"{self.name} - {self.duration}"
+
+    

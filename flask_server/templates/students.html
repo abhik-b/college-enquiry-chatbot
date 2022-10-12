@@ -4,46 +4,122 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Teachers</title>
+    <title>Students</title>
+    <style>
+      *{
+        box-sizing: border-box;
+        padding:0;
+        margin: 0;
+      }
+      body{
+          padding:2em;
+          display:flex;flex-direction: column;min-height: 100vh;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      section{
+          padding:2em;
+          width: 100%;
+      }
+      h1{
+        color: #1979fa;
+      }
+      main{
+        display: flex;
+          gap:48px;
+      }
+      .all{
+          max-height: 90vh;
+          overflow: auto;
+      }
+      .all ul{
+          display: flex;
+          flex-wrap: wrap;
+          gap:2em;
+      }
+      form{
+          display: flex;
+          flex-direction: column;
+          gap:1em;
+          padding:1em 0em;
+      }
+
+      a{
+        text-decoration: none;color:inherit;
+      }
+      button{
+        background:#1979fa;
+        color:white;padding:.5em;
+        border:none;
+        cursor:pointer;
+      }
+      input{
+        width:100%;
+        padding:.5em;
+      }
+      li{
+        display: grid;
+        gap: 8px;
+      }
+      footer{
+margin-top: auto;
+}
+      </style>
   </head>
   <body>
-    All Teachers :
-    <ul>
-      {% for teacher in teachers %}
-      <li>
-        <p>{{teacher}} Department : {{teacher.department}}</p>
-      <button>
-        <a href="http://127.0.0.1:5000/teachers/delete/{{teacher.id}}/">delete</a>
-      </button>
-      </li>
-      {% endfor %}
-    </ul>
+    <h1>Update Students Page</h1>
+    <main>
+        <section class="all">
+          <h2>All Students :</h2>
+          <ul>
+            {% for student in students %}
+            <li>
+              <p>Name : {{student.name}}-{{student.id}}</p>
+              <p>Course : {{student.course}}</p>
+              <p>CGPA : {{student.cgpa}}</p>
+            <button>
+              <a href="http://127.0.0.1:5000/students/update/{{student.id}}/">update</a>
+            </button>
+            </li>
+            {% endfor %}
+          </ul>
+        </section>
+    
+  <section>
+    <h2>Add students  here</h2>
+    <form action="http://127.0.0.1:5000/students/" method="post">
+      <div>
+        <label for="studentID">Student ID</label>
+        <br>
+        <input type="number" name="studentID"
+              placeholder="Student ID"
+              value="{{ request.form['studentID'] }}">
+        </input>
+      </div>
 
-    <h2>Add teachers  here</h2>
-    <form action="http://127.0.0.1:5000/teachers/" method="post">
-      <label for="firstname">First name</label>
-      <br>
-      <input type="text" name="firstname"
-             placeholder="First name"
-             value="{{ request.form['firstname'] }}">
-      </input>
-      <br>
-      <label for="lastname">Last name</label>
-      <br>
-      <input type="text" name="lastname"
-             placeholder="last name"
-             value="{{ request.form['lastname'] }}">
-      </input>
-      <br>
-
-      <label for="department">Department</label>
-      <br>
-      <input type="text" name="department"
-             placeholder="department"
-             value="{{ request.form['department'] }}">
-      </input>
-      <br>
+      <div>
+        <label for="name">Name</label>
+        <br>
+        <input type="text" name="name"
+              placeholder="Name"
+              value="{{ request.form['name'] }}">
+        </input>
+      </div>
+    
+      <div>
+        <label for="course">Course</label>
+        <br>
+        <span class="input-group-addon">Please select</span>
+              <select name="course">
+                {% for o in courses %}
+                <option value="{{ o.id }}">{{ o.name }}</option>
+                {% endfor %}
+              </select>
+      </div>
+      
       <button type="submit">Submit</button>
   </form>
+  </section>
+</main>
+<footer>This site is coded by Abhik Bhattacharya , Pritam Chatterjee  & Aliva Mandal</footer>
   </body>
 </html>

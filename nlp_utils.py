@@ -2,7 +2,7 @@ import nltk
 # nltk.download('punkt')
 from nltk.stem.porter import PorterStemmer
 import numpy as np
-
+from flask_server.university.models import Course
 
 stemmer=PorterStemmer()
  
@@ -34,16 +34,22 @@ def bag_of_words(tokenized_sentence, words):
 
 import spacy 
 nlp = spacy.load("en_core_web_sm")
-
 from spacy.matcher import Matcher
+
+
 matcher=Matcher(nlp.vocab)
+
+courses=Course.query.all()
+
+for course in courses:
+    pattern = [{"LOWER":course.name.lower()}]
+    matcher.add(course.name,[pattern])
 
 btech_pattern = [
     [{"LOWER":"b."},{"LOWER":"tech"}],
     [{"LOWER":"b"},{"LOWER":"tech"}],
     [{"LOWER":"btech"}]
 ]
-
 
 matcher.add("mtech",[[{"LOWER":"mtech"}],[{"LOWER":"m","OP":"+"},{"LOWER":"tech"}]])
 matcher.add("btech",btech_pattern)
@@ -58,17 +64,4 @@ def course_matcher(sentence):
 
 
 
-# fetch all course tags from dbms
-# then for each of the tags create a pattern
-# for those courses where people use different aliases
-# we can extend those patterns manually
-# Example : 
-# print('what is b. tech ?',course_matcher('what is b. tech ?')) ✅
-# print('what is btech ?',course_matcher('what is btech ?'))✅
-# print('what is b tech ?',course_matcher('what is b tech ?'))✅
-# print('what is b.tech ?',course_matcher('what is b.tech ?'))❌
 
-# matcher.add('btech',[
-#     [{"LOWER":"b.tech"}]
-# ])
-# print('what is b.tech ?',course_matcher('what is b.tech ?'))✅

@@ -8,29 +8,55 @@
     <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}" />
   </head>
   <body>
-    <h1>This is the home page</h1>
+    
     <main>
+      <h1>College Enquiry Chatbot System</h1>
+    <p>This chatbot will respond to students' queries regarding university. Questions like "When are holidays ? ", "Can you tell more about teachers?","How long does MCA take ?","What is my CGPA this sem" can be answered by this chatbot. The original topic of this project is "Efficient Chatbot Design". Read the detailed exolanation on how we created this efficient chatbot design <a href="https://github.com/abhik-b/college-enquiry-chatbot/blob/master/Explanation.md" target="_blank">here.</a></p>
+
+    <h3>  All features :</h3>
+      <ul>
+        <li>Ask result or CGPA</li>
+        <li>Queries related to faculty</li>
+        <li>Course details & syllabus</li>
+        <li>Ask about holidays</li>
+      </ul>
+    
+      <h3>How to Interact :</h3>
+    <ul>
+      <li>Please Click on the chat button on the bottom-right corner. </li>
+      <li>Then interact with the chatbot : 
+          <ol>
+            <li>Try greeting the bot </li>
+            <li>ask for your result </li>
+            <li>ask for any particular course</li>
+            <li>Enquire about faculties or holidays</li>
+            <li>Ask for jokes !!!</li>
+          </ol>
+      </li>
+    </ul>
+  </main>
       <div class="chatbot-section">
-        <figure class="mobile">
+        <figure class="mobile hidden">
           <div class="app">
             <!-- Header -->
             <div class="header">
               <!-- avatar -->
               <img
                 class="avatar"
-                src="https://i.pinimg.com/736x/05/3a/08/053a0826a8c0c0011b954494bafed505--ux.jpg"
+                src="{{url_for('static',filename='dp.png')}}"
                 alt="Chatbot"
               />
               <!-- name & status -->
-              <p class="leading-[.5rem]">
-                <span class="font-semibold text-sm">College Enquiry BOT</span>
-              </p>
+              <p>Narula Assistant BOT</p>
             </div>
 
             <!-- Chat section -->
             <div class="chat-messages">
               <div class="chat-message incoming-message">
-                Hi, I am College Enquiry Bot ! Ask me anything related to :
+              👋  Hello, I am College Enquiry Bot 
+              </div>
+              <div class="chat-message incoming-message">
+              Ask me anything related to :
                 <ol>
                   <li>Semester wise result 📜📚</li>
                   <li>Faculty 🧑‍🏫👩‍🏫</li>
@@ -83,7 +109,8 @@
           </button>
         </div>
       </div>
-    </main>
+    
+    <footer>This site is coded by Abhik Bhattacharya , Pritam Chatterjee  & Aliva Mandal</footer>
     <script src="{{url_for('static',filename='chat.js')}}"></script>
   </body>
 </html>

@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Holidays</title>
+    <title>Courses</title>
     <style>
-      *{
+    *{
         box-sizing: border-box;
         padding:0;
         margin: 0;
@@ -60,53 +60,63 @@
         display: grid;
         gap: 8px;
       }
-      footer{
+footer{
 margin-top: auto;
 }
-      </style>
+    </style>
   </head>
   <body>
-    <h1>Holidays Page</h1>
+    <h1>Courses Page</h1>
     <main>
       <section class="all">
-        <h2> All Holidays :</h2>
-         <ul>
-           {% for holiday in holidays %}
-           <li>
-             <p>{{holiday}}</p>
-             <button>
-                 <a href="http://127.0.0.1:5000/holidays/download/{{holiday.id}}/">Download</a>
-             </button>
-           </li>
-           {% endfor %}
-         </ul>
-       </section>
-         
-     <section>
-       <h2>Add Holidays  here</h2>
-         <form action="http://127.0.0.1:5000/holidays/" method="post" enctype="multipart/form-data">
-           <div>
-             <label for="year">Year</label>
-             <br>
-             <input type="text" name="year"
-                    placeholder="YEar"
-                    value="{{ request.form['year'] }}">
-             </input>
-           </div>
-           
-           <div>
-             <label for="file">File</label>
-             <br>
-             <input type="file" name="file" />
-           </div>
-           <button type="submit">Submit</button>
-           </form>
-           
-       </form>
-     </section>
-    </main>
-
-    <footer>This site is coded by Abhik Bhattacharya , Pritam Chatterjee  & Aliva Mandal</footer>
+        <h2>
+            All Courses :
+        </h2>
+       
+        <ul>
+          {% for course in courses %}
+          <li>
+            <p>{{course}}</p>
+            {% if course.syllabus %}
+            <button>
+              <a href="http://127.0.0.1:5000/courses/syllabus/{{course.id}}">Syllabus</a>
+          </button>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+    </section>
     
+<section>
+    <h2>Add Courses  here</h2>
+    <form action="http://127.0.0.1:5000/courses/" method="post" enctype="multipart/form-data">
+      <div>
+        <label for="name">Name</label>
+      <br>
+      <input type="text" name="name"
+             placeholder="NAme"
+             value="{{ request.form['name'] }}">
+      </input>
+    </div>
+      <div>
+        <label for="duration">Duration</label>
+        <br>
+        <input type="text" name="duration"
+               placeholder="DUration"
+               value="{{ request.form['duration'] }}">
+        </input>
+      </div>
+      <br>
+      <div>
+        <label for="file">Syllabus</label>
+        <br>
+        <input type="file" name="file" />
+      </div>
+      <br/>
+      <button type="submit">Submit</button>
+  </form>
+</section>
+    </main>
+    <footer>This site is coded by Abhik Bhattacharya , Pritam Chatterjee  & Aliva Mandal</footer>
   </body>
 </html>

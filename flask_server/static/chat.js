@@ -40,7 +40,7 @@ function addMessage(message, msgtype) {
     chatMessage.innerText = message;
     document.querySelector(".chat-messages").appendChild(chatMessage);
     document.querySelector(".chat-messages").scrollTop +=
-        chatMessage.getBoundingClientRect().y + 10;
+        chatMessage.getBoundingClientRect().y + 20;
     chatInput.value = "";
 }
 
@@ -50,6 +50,7 @@ function addPDFBtn(data) {
     chatMessage.classList.add(`incoming-message`);
     chatMessage.classList.add(`file-message`);
     chatMessage.innerText = data.filename;
+    console.log(data.link)
     chatMessage.onclick = (e) => {
         window.open(data.link)
     }
