@@ -95,7 +95,7 @@ We create some layers then we need a path to take data from each layer to anothe
 
 I created a NeuralNet Class which actually derives the `torch.nn` module. It has 2 methods :
 - `__init__`
-: it creates the layers we need & also defines the activation function which is ReLU in our case. We are doing 4 layers. First Layer will have input size & hidden layer size. The next 2 layers will have hidden sizes
+: it creates the layers we need & also defines the activation function which is ReLU in our case. We are doing 4 layers. Each layer has a input & output size. First Layer will have length of X train's 1st element as input size & hidden size as output size. The next 2 layers will have hidden sizes as input & output sizes. Last layer will have hidden size as input size but output size will be the no of tags we have.
 - `forward`
 : it helps in passing/forwarding the data with activation functions & outputting the data (without activation functions).
  
@@ -106,6 +106,8 @@ First I open the json file & load all the contents from it. Then I get all the t
 Then I remove all the punctutations , stem every words , remove the duplicates & sort all words array. Then Remove the duplicates & sort the tags as well.
 
 Then I create bag of words for each pattern in xy array & append it to X-Train dataset. Similarly I get index of the associated tag (for any pattern in xy array) in tags array & append it to Y-Train. Then convert both the trains to numpy arrays.
+
+Next I created a ChatDataSet class derving the Dataset Module from `torch.utils.data`. Here x_data & y_data is assigned 
 
 
 ## Predict Intention
