@@ -107,10 +107,16 @@ Then I remove all the punctutations , stem every words , remove the duplicates &
 
 Then I create bag of words for each pattern in xy array & append it to X-Train dataset. Similarly I get index of the associated tag (for any pattern in xy array) in tags array & append it to Y-Train. Then convert both the trains to numpy arrays.
 
-Next I created a ChatDataSet class derving the Dataset Module from `torch.utils.data`. Here x_data & y_data is assigned 
+Next I created a ChatDataSet class deriving the Dataset Module from `torch.utils.data`. Here x_data & y_data is assigned & some minor utilites done.
+
+The the dataset is loaded using dataloader,batch size is given 8 .Batch sizes are the data samples that will be used to train. For example I have 400 samples of data for training & I set batch_size = 8 then first 8 data samples (i.e from 1 to 8 ) will be used to train. Then again next 8 data samples (i.e from 9 to 16) will be used to train. Simliarly all 400 data samples will be trained by training 8 samples at once.Shuffle is set to true which means dataset will be shuffled.
+
 
 
 ## Predict Intention
+
+
+
 
 ## Create REST api
 
