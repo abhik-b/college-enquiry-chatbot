@@ -13,14 +13,15 @@ All features :
 
 
 ## Tech Stack
-- database - sqlite3
-- server - flask   
-- frontend - html css js  
-- neural network - python
+- **database** - sqlite3
+- **server** - python & flask   
+- **frontend** - html,css,js  
+- **neural network** - python & pytorch
+- **natural language processing** - spacy & nltk
 
 ## Getting started
 
-First install `virtualenv` then create a virtual environment using `virtual venv` command in **terminal/cmd prompt/powershell**. Then activate it using `venv\Scripts\activate`. Now we can install our dependencies for this project inside this isolated virtual environment.
+First create a virtual environment using `virtualenv venv` command in **terminal/cmd prompt/powershell**. Then activate it. Now we can install our dependencies for this project inside this isolated virtual environment.
 
 We will install the following libraries to get started :
 
@@ -58,3 +59,14 @@ I used `pip install nltk spacy flask` to install them together. Then I use `pyth
 -- intents.json (dataset for training)
 -- requirement.txt (stores the name & versions of the libraries used)
 ```
+
+## Screenshots
+
+### Home Page
+![Coming Soon...]()
+
+### Admin Pages
+![Admin-Teachers](./assets/Admin-Teachers.png)
+![Admin-Students](./assets/Admin-Students.png)
+![Admin-Courses](./assets/Admin-Courses.png)
+![Admin-Holidays](./assets/Admin-Holidays.png)

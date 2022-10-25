@@ -10,6 +10,7 @@ from nlp_utils import course_matcher
 db.create_all()
 
 @app.post("/chatbot_api/")
+
 def normal_chat():
     msg = request.get_json().get('message')
     response,tag = chatbot_response(msg)
@@ -26,7 +27,7 @@ def normal_chat():
             return jsonify({
             'response':response,'tag':tag,
             "data":{
-                "filename":f"{course_details.name} syllabus" ,
+                "filename":f"{course_details.name} syllabus",
                 "link":link
                 }
         })

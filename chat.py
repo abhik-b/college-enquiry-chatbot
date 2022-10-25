@@ -37,8 +37,7 @@ def chatbot_response(sentence):
         
         probs=torch.softmax(output,dim=1)
         prob=probs[0][predicted.item()]
-        
-        print(prob.item(),tag)
+
         if prob.item() > 0.75 :
             for intent in intents['intents'] :
                 if tag == intent['tag']:
