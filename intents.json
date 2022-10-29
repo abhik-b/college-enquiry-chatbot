@@ -45,12 +45,13 @@
         "What holidays do we have?",
         "tell more about holidays",
         "holidays when ???",
-        "which days are holidays ?"
+        "which days are holidays ?",
+        "How many days can we get after seach sem ?" ,
+        "Can we get study leave ?",
+        "what are the biggest holidays we can get ??",
+        "Are there any department wise special holiday ?"
       ],
-      "responses": [
-        "We have 100 holidays throughout the year",
-        "100 Holidays thorughout the year !!!"
-      ]
+      "responses": [""]
     },
     {
       "tag": "faculty",
@@ -62,7 +63,8 @@
         "more info on teachers",
         "what are the teachers ?",
         "tell more about the teachers",
-        "narula teachers"
+        "narula teachers",
+        "who is the the principal and what about the placement officer??" 
       ],
       "responses": [
         "Our Prinicipal is Dr. Maitreyi Ray Kanjilal \n Our Placement Cell has Biswarup Bhattacharjee , Abhijit Nandy , Debanjan Mitra. "
@@ -77,7 +79,11 @@
         "What is MTECH ?",
         "What is BCA ?",
         "When do BTECH gets completed ?",
-        "How long does MCA take ?"
+        "How long does MCA take ?",
+        "which Course are best here ?" ,
+        "what about the fees Stucture ?" ,
+        "Are there any medical course ?" ,
+        "how many time will take to complete those course ?"
       ],
       "responses": ["Course related queries", "MCA takes 2years"]
     },
