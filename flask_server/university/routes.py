@@ -6,6 +6,9 @@ from io import BytesIO
 @app.route("/")
 def hello_world():
     return render_template('home.html')
+@app.route("/home2/")
+def hello_world2():
+    return render_template('home2.html')
 
 @app.route("/teachers/",methods = ['POST', 'GET'])
 def teachers():

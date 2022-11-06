@@ -12,32 +12,30 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  place-items: center;
   font-size: 16px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-main {
+/* main {
   height:100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
   gap:.5em;flex:1;
   width:50%;
-}
+} */
 
 ul,ol {
   padding:  4px 24px ;
 }
 .chatbot-section {
-  position: absolute;
-  right: 50px;
-  bottom: 50px;
+  margin-top: 2.5em;
   display: grid;
   place-items: center;
 }
 .button-container {
-  width: 320px;
+  max-width: 320px;
   display: grid;
-  place-items: end;
 }
 .chat-open-btn {
   background: transparent;
@@ -51,20 +49,55 @@ ul,ol {
 .mobile {
   padding: 1em;
   border-radius: 16px;
-  background: white;
-  max-width: 320px;
-  box-shadow: 0 25px 36px -12px rgb(0 0 0 / 0.25);
+  background: hsl(0, 0%,99%);
+  max-width: 360px;
   display: flex;
   flex-direction: column;
   justify-items: center;
   place-items: center;
   transition: all 500ms ease;
+  position: relative;
+  border:2px solid rgba(0, 0, 0, 0.632);
 }
+
+.mobile::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(-75deg, #ff27f8 0%, #0effcf 100% );
+  transform: translate3d(0px, 20px, 0) scale(1);
+  filter: blur(20px);
+  opacity: 1;
+
+  border-radius: inherit;
+}
+
+/* 
+* Prevents issues when the parent creates a 
+* stacking context. (For example, using the transform
+* property )
+*/
+.mobile::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  border-radius: inherit;
+}
+      
 
 .app {
   background-color: #f9f8fd;
   border-radius: 16px;
-  min-width: 300px;
+  min-width: 340px;
   max-height: 900px;
   overflow-x: auto;
   padding-bottom: 0;
@@ -98,7 +131,6 @@ input[type='radio'] {
   color: hsl(270, 7%, 64%);
 }
 .header {
-  /* background-image: linear-gradient(to right, #a855f7, #ec4899); */
   width: 100%;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
@@ -108,9 +140,18 @@ input[type='radio'] {
   place-items: center;
   gap: 4px;
 
-  background: rgb(255 255 255 /1);
+  background: rgb(255 255 255 /.75);
   color: rgb(0 0 0 /1);
+  border-bottom: 4px double rgba(0, 0, 0, 0.578);
 }
+.header p{
+  font-size: 1.4em;
+  font-style: bold;
+}
+.header span{
+  color: #028b70;
+}
+
 .avatar {
   height: 48px;
   width: 48px;
@@ -143,9 +184,10 @@ input[type='radio'] {
 .incoming-message {
   border-bottom-left-radius: 0px;
   background-color: hsl(0, 0%, 100%);
-  box-shadow: 0 4px 6px -1px #0000001a,0 2px 4px -2px #0000001a;
+  box-shadow: 0 4px 8px -1px #00000027,0 4px 8px -2px #0000001f;
 
 }
+
 .outgoing-message {
   border-bottom-right-radius: 0px;
   background-color: #1979fa;
@@ -194,14 +236,14 @@ input[type='radio'] {
 }
 footer{
   margin-top: auto;
-  color:rgb(205, 205, 205);
+  color:rgba(0,0,0, 0.35);
 }
 
 
 .hidden {
   opacity: 0;
   pointer-events: none;
-  transform: translateX(50px);
+  transform: translateY(50px);
 }
 
 
